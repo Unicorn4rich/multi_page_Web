@@ -1,0 +1,155 @@
+/* globals.css */
+@import url('https://fonts.googleapis.com/css2?family=Itim:wght@400&display=swap');
+
+
+.bestSelling_Sec{
+    width: 100%;
+    padding-top: 5.375rem;
+    text-align: center;
+}
+
+.bestSelling_Sec h1{
+    font-family: 'Itim', sans-serif;
+    font-size: 60px;
+    color: #39373A;
+    line-height: 4.5rem;    /* ye line height sirf h1 ko khud ke liye di hai ke apni height wo 72px fix rakhy bhaly uski height km ya zada ho rhi ho*/  
+}
+
+.bestSelling_Sec p{
+    font-size: 30px;
+    color: #39373A;
+}
+
+
+/* embla corusel website work */
+
+.embla{
+    overflow: hidden;  /* ye main container apne andar ki cheezo ko bahar show nahi hony dega unhy trim kar dega*/
+    margin-top: 45px;
+}
+
+.embla__container{
+    display: flex;
+}
+
+.embla__slide{
+    display: flex;
+    flex-direction: column;
+    margin-right: 57px;
+}
+
+.imageDiv{
+    width: 360px;
+    height: 513px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.card_Img{
+    width: 400px;
+    height: 516px;
+
+    &:hover{
+        transform: scale(1.02);
+    }
+}
+
+.text_div{
+    width: 360px;
+}
+
+.text_div h1{
+    font-size: 1.625rem;
+    color: #000000;
+}
+
+.text_div p{
+    font-size: 1.625rem;
+    color: #000000;
+
+    white-space: pre;
+}
+
+.price_div{
+    display: flex;
+    justify-content: center;
+}
+
+.star{
+    display: inline-block;
+    margin-top: -4px;
+}
+
+.last_button{
+    width: 147px;
+    height: 54px;
+    font-size: 28px;
+    border: 2px solid black;
+    background-color: transparent;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 20px;
+    margin-top: 41px;
+    margin-bottom: 47px;
+
+    &:hover{
+        background-color:#d2d0d3 ;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* NOTES
+
+html embla divs flow
+
+embla
+
+ye aik Parent_Container div hai.
+
+
+embla__container
+
+ye aik Child_Container div hai. [1] is div ke andar jo bhi item aenge wo dragble honge pakar kar kahi bhi move kar sakty hain.
+[2] or ye khud (embla) yani Parent_Container mein sticker ki tarhn chipka hua hai. 
+[3] iske andar jo bhi property ya item ata hai ye usy by-default horizenter mein shift kar deta hai. 
+
+
+
+Embla Carousel
+
+installation 
+
+npm install embla-carousel-react --save   agr ye error dey to iske sath ye laga den => --legacy-peer-deps
+
+
+import in tsx file
+
+import useEmblaCarousel from 'embla-carousel-react'
+
+
+import hook
+
+const [emblaRef] = useEmblaCarousel()
+
+
+
+white-space: pre;
+
+paragraph ko bhi ham pre mein convert kar sakty hain is property se.
+
+
+
+
+
+*/

@@ -1,0 +1,181 @@
+.product{
+    width: 100%;
+    /* border: 3px solid red; */
+    display: grid; 
+    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    margin-bottom: 50px;
+   
+    /* grid-template-columns: repeat(4, 1fr); */
+    /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+    /* grid-template-columns: auto 1fr auto 1fr; */
+    /* grid-template-columns: auto 1fr 1fr 1fr; */
+    /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+    /* grid-template-columns: auto auto auto auto; */
+    /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+}
+
+.topImg_div{
+    /* background-color: aqua; */
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.card_img{
+    width: 308px;
+    height: 379px;
+
+    &:hover{
+        transform: scale(1.02);
+    }
+}
+
+.bottomText_div{
+    /* background-color: blue; */
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+}
+
+.star_div{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.bottomText_div p{
+    font-size: 22px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Notes
+
+
+grid-template-columns: auto auto auto auto;
+
+hmare section ki width 1000px thi or usme hamne 4 cards bana rakhy thy to section mein (auto auto auto auto) ki property
+deny se equaly un 4 cards pe 1000px devide ho gaye or ham aik card ki width (250px) ho gai. 
+
+
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+repeat() karo ye (auto-fit) jis section mein lgaenge or us section ki width 400px hao or uske andar jo card aenge
+un har aik card ki width 100px hai to ye araam se section ki aik line mein aa jaenge lekin agr card ki width ziyada
+hai 120px to ye property sirf 3 card ko first line mein adjust karegi or 4th waly card ko neechy wali line mein 
+bhej degi or jo opar 3 cards ke beech space bachegi jisme hmara 4th wala card adjust nhi ho paa rha tha ye us space ko
+un 3eeno cards mein equaliy devide kar degi.
+
+minmax(250px, 1fr)
+
+iska matlab ai hmara card minimum (250px) se ziyada chota na ho or maximum (1fr) => fraction) tak ho iska matlab hai
+
+
+grid-template-columns: 1fr 1fr 1fr 1fr;
+
+iska matlab ye hai ke hmara jo section hai for example 100px ka to usme 4 columns banenge jinka size equaliy 25px ka hoga
+isko ham aisy samjh sakty hain ke parent section ka size bhaly jitna bhi ho usme agr ham (1fr) jitni dafa bhi likh rhy hain
+for example 6 to parent apne size ko equaly 6 (1fr) pe devide kar dega.
+
+grid-template-columns: 1fr 2fr 1fr 4fr;
+
+iska matlab hai parent ka jo bhi size hoga usy 100% maan kar total jitne bhi honge(fr) unpe devide kiyya jaega 
+jese ke isme (8) fr ban rhy hain matlab 8 hissy. phir isme pehly (1fr) ko aik hissa diyya jaega dosry (2fr) ko do
+hissy diyye jaenge tessry (1fr) ko aik hissa milega or chothy (4fr) ko char hissy milenge size ke.   
+
+
+1fr
+
+ye unit apne parent ke size ke hisab se calculation karta hai.
+
+
+grid
+
+grid jab calculation karta hai to wo sab se pehly gap ka khayal rakhta hai iske bad wo solid dimension matlab (px, auto) in 
+sari values ka khayal rakhta hai fr ke ilawa.
+100px ka section hai usme (grid fr) ka use karte hain to sab se pehly gap ki value check ki jaegi ke kitni hai phir
+us gap ki value ko section ke 100px size mein se minus kiyya jaega forexample gap 10px ka hai to peechy section ka size 90px bacha
+phir is size ko solid dimension se minus kiyya jaega agr koi value hui to usko bhi is size mein se minus kar diyya jaega 30px.
+phir in sab ke bad jitna size bachega usy (1fr) jitne bhi honge unpe equaly devide kar diyya jaega. 
+section size 60px / 4 => 15 har aik (fr) ke card ki value banegi.
+
+
+grid-template-columns: auto 1fr 1fr 1fr;
+
+is situation mein first value (auto) apne content se size lega matlab ag first card ke andar koi picture hai para hai ya h1 hai to
+ye uska jo size hoga usy auto mein ley lega or baqi ka jitna size bachega usy (fr) kr cards mein devide kar dega.
+
+
+grid-template-columns: auto 1fr auto 1fr;   =>  section width 1000px
+
+sab se pehly grid is section ke andar gap ko check karega agr hai to usy minus karega warna nahi phir jaega solid dimension ke pass
+agr uski koi value hogi to usy minus karega iska bad wo jaega first (auto) ke pass dekhega uske andar koi content hai agr hai to
+usko uske size ke hisab se rakh lega uske bad jaega third waly (auto) ke pass uske content ka koi size hai to usy minus karega phir 
+last mein bachy hain do (fr) dosra or chotha wala section ke pass jitni bhi width bachegi wo usy in dono ko equaly devide kar dega.  
+
+
+style={{minWidth: "50px", gridColumn: "span 2"}}> => inline CSS
+grid-template-columns: auto 1fr 1fr 1fr;
+
+pehly auto ke pehly div ke pass minumum value 50px hai iska matlab is div ki value 50px se bari jitna chahy ho jaye lrkin is se choti 
+na ho (span 2) laga kar hamne ye kaha ke pehly auto waly div or dosry 1 fr ko apas mein mila do iska matlab ye hau ke
+ab 1000px size ke 3 hissy honge (1fr) ke liye or auto ke liye hissa isliye nahi hoga kiyun ke uska size bara ho kar mix ho chuka hai
+1fr ke sath agr auto ke pass sirf (width 50px) ki hoti to 50px + 1fr size dono plus hoty or first div ka size baqio se bara hota.
+
+
+grid-template-columns: 1fr 1fr 1fr 1fr;  =>  grid-template-columns: repeat(4, 1fr);
+
+ye dono same work karty hain dosry wala tariqa short or asaan hai isliye ham usy bhi use kar sakty hain.
+
+
+Important Tip =>
+
+{[...Array(500)].map((_, index)=>{ return( <div key={index}> "past code here jo repeat krwana hai" </div> )})}
+
+[...Array(500)] array ki har aik value jo ke undefined hogi usy destructure kar ke bahar lao or uspe .map(_, index) ka
+method chla ke aik aik value ko get karo (_) underscore ka matlab hamen array ki di hui undefined value nahi use karni
+(index) iska matlab har aik value ke sath hamen index number lgaty jana hai kiyun ke ye next.js ke liye zrori hota hai
+har aik value ko identydy karna or callBack function chlao return() jab bhi function chalega return ke andar rakha code
+hamen milega. or har repeat krwai value ke andar Key={index} zaror dena hai taky Next.js isko samjh saky index number se
+ke har aik div alag alag hai Is technique ka sab se bara faida ye hai ke jab bhi hamen koi div ya kuch bhi repeatly chlana
+hai apni khud ki di hui condition ke hisab se to ye chala dega jese ham for loop mein condition define kar ke apni marzi se
+chlaty the ye same wesy hi kaam karta hai. 
+
+
+
+
+*/

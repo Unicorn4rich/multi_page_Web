@@ -1,0 +1,93 @@
+.hero_Sec{
+    width: 100%;
+    /* height: 811px; */
+    padding-top: 8.9375rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.heroLeft{
+    /* width: 50%; */
+    height: 100%;
+    border: 1px solid transparent
+}
+
+.heroLeft h1{
+    font-size: 6.25rem;
+    color: #39373A;
+    line-height: 120px;
+}
+
+.heroLeft p{
+    font-size: 30px;
+    color: #524F52;
+    margin-bottom: 2.25rem;
+}
+
+.heroLeft button{
+    width: 13.6875rem;
+    height: 3.875rem;
+    font-size: 30px;
+    color: #FFFBFB;
+    background-color: #39373A;
+    padding: 12px 25px 12px 25px;
+
+    &:hover{
+        background-color: #9747FF;
+    }
+}
+
+/* right div work start */
+
+.heroRight{
+    /* width: 50%; */
+    height: 100%;
+    border: 1px solid aqua;
+    display:flex;
+    justify-content: flex-end;
+}
+
+.imgDiv{
+    width: 400px;
+    height: 600px;
+    border: 1px solid red;
+    border-top-left-radius: 120px;
+    border-top-right-radius: 40px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 120px;
+    background-color: #B4AEB4;
+    display:flex;
+    justify-content: center;
+    align-items: flex-end;
+   overflow: hidden;           /* ye property hamne div ke andar waly content ko div se bahar na nikalny ke liye di hai */
+}
+
+
+@media (max-width: 768px){
+    .hero_Sec{
+        display: flex;
+        flex-direction: column;
+        padding-top: 50px;
+    }
+
+    .heroLeft{
+        text-align: center;
+    }
+
+    .heroRight{
+        display:flex;
+        justify-content: center;
+        margin-top: 3.125rem;
+    }
+
+    .imgDiv{
+        width: 100%;
+        border-top-left-radius: 300px;
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 300px;        
+    }
+    
+
+     
+}
