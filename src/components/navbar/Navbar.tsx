@@ -10,10 +10,10 @@ import { motion, AnimatePresence } from "framer-motion"
 
 function Navbar() {
 
- let [open, setopen] = React.useState<boolean>(false)
+ let [open, setOpen] = React.useState<boolean>(false)
 
   let showFunc = ()=>{
-    setopen(!open)
+    setOpen(!open);
   }
 
 
@@ -24,7 +24,7 @@ function Navbar() {
           <h1>STYLISH</h1>
 
 <AnimatePresence>
-          {open == true ? (
+          {open == true ? (   // true hoga to ye div show hoga
 
               <motion.div className={`${styles.Responsiv_div} ${styles.adjust_div}`}  
               key={"Slow_close_menu"}
@@ -45,7 +45,8 @@ function Navbar() {
              
               )
               
-              :(
+              :(      // false hoga to ye div show hog
+                
                 <div className={`${styles.Responsiv_div}`}>      
               <ul>
                 <li><Link href="/" style={{color: "#39373A", fontWeight: "600"}} >HOME</Link></li>

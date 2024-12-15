@@ -1,6 +1,6 @@
-import { Macondo } from '@next/font/google';
-import { Livvic } from '@next/font/google';
-import { Itim } from '@next/font/google';
+import { Macondo } from 'next/font/google';
+import { Livvic } from 'next/font/google';
+import { Itim } from 'next/font/google';
 
 
 

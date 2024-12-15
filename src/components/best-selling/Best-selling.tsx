@@ -37,7 +37,7 @@ function BestSelling (){
                 <div className={styles.embla__container}>
 
  {/* Cards */}
-                   {card_data.map((data) => {return(   // Card repat looping
+                   {card_data.map((data) => {return(   // Card repeat looping
                      
                       <div className={styles.embla__slide} key={data.id}>
                         
@@ -81,7 +81,7 @@ kisi bhi text style ko node module se download karte hain to is tarhn use karte 
 
 style={{backgroundColor: data.backgroundColor}}
 
-isy hamne div mein inline css kar ke lgaya is se hoga ye ke jab bhi lopp chalega har div ko alag alag background
+isy hamne div mein inline css kar ke lgaya is se hoga ye ke jab bhi loop chalega har div ko alag alag background
 color milega.
 
 
